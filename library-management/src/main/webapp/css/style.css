@@ -1,0 +1,223 @@
+/* ============================================================
+   Library Management System – Global Stylesheet
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f4f8;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ── Header ── */
+header {
+    background: linear-gradient(135deg, #1a237e 0%, #283593 60%, #3949ab 100%);
+    color: #fff;
+    padding: 0 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,.25);
+}
+.header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+}
+.brand { font-size: 1.4rem; font-weight: 700; letter-spacing: .5px; text-decoration: none; color: #fff; }
+.brand span { color: #90caf9; }
+
+/* ── Navigation ── */
+nav { display: flex; gap: .25rem; }
+nav a {
+    color: #e3f2fd;
+    text-decoration: none;
+    padding: .45rem .9rem;
+    border-radius: 4px;
+    font-size: .9rem;
+    transition: background .2s;
+}
+nav a:hover, nav a.active { background: rgba(255,255,255,.18); color: #fff; }
+
+/* ── Main Container ── */
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+    flex: 1;
+}
+
+/* ── Page Title ── */
+.page-title {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #1a237e;
+    margin-bottom: 1.5rem;
+    padding-bottom: .5rem;
+    border-bottom: 3px solid #3949ab;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+.page-title .icon { font-size: 1.5rem; }
+
+/* ── Alert Messages ── */
+.alert {
+    padding: .85rem 1.2rem;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+    font-size: .92rem;
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+}
+.alert-success { background: #e8f5e9; border-left: 4px solid #43a047; color: #2e7d32; }
+.alert-danger  { background: #ffebee; border-left: 4px solid #e53935; color: #c62828; }
+.alert-info    { background: #e3f2fd; border-left: 4px solid #1e88e5; color: #1565c0; }
+
+/* ── Cards ── */
+.card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.08);
+    padding: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+.card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.2rem;
+}
+.card-title { font-size: 1.1rem; font-weight: 600; color: #1a237e; }
+
+/* ── Stat Cards (home page) ── */
+.stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; margin-bottom: 2rem; }
+.stat-card {
+    background: linear-gradient(135deg, #1a237e, #3949ab);
+    border-radius: 10px;
+    padding: 1.5rem;
+    color: #fff;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(26,35,126,.3);
+}
+.stat-card .stat-number { font-size: 2.8rem; font-weight: 800; }
+.stat-card .stat-label  { font-size: .85rem; opacity: .85; margin-top: .3rem; }
+
+/* ── Tables ── */
+.table-wrapper { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: .93rem; }
+thead tr { background: #1a237e; color: #fff; }
+thead th { padding: .85rem 1rem; text-align: left; font-weight: 600; white-space: nowrap; }
+tbody tr { border-bottom: 1px solid #e8eaf6; transition: background .15s; }
+tbody tr:hover { background: #f3f4fc; }
+tbody td { padding: .8rem 1rem; }
+.badge {
+    display: inline-block;
+    padding: .25rem .65rem;
+    border-radius: 20px;
+    font-size: .78rem;
+    font-weight: 600;
+}
+.badge-genre  { background: #e8eaf6; color: #3949ab; }
+.badge-nation { background: #e8f5e9; color: #2e7d32; }
+
+/* ── Buttons ── */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    padding: .5rem 1.1rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: .88rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity .2s, transform .1s;
+}
+.btn:hover { opacity: .88; transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+.btn-primary  { background: #3949ab; color: #fff; }
+.btn-success  { background: #43a047; color: #fff; }
+.btn-warning  { background: #fb8c00; color: #fff; }
+.btn-info     { background: #039be5; color: #fff; }
+.btn-secondary{ background: #757575; color: #fff; }
+.btn-sm { padding: .3rem .7rem; font-size: .8rem; }
+
+/* ── Forms ── */
+.form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.2rem; }
+.form-group { display: flex; flex-direction: column; gap: .35rem; }
+.form-group label { font-size: .88rem; font-weight: 600; color: #37474f; }
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: .6rem .85rem;
+    border: 1.5px solid #c5cae9;
+    border-radius: 6px;
+    font-size: .93rem;
+    background: #fafbff;
+    transition: border-color .2s, box-shadow .2s;
+    outline: none;
+}
+.form-group input:focus,
+.form-group select:focus { border-color: #3949ab; box-shadow: 0 0 0 3px rgba(57,73,171,.12); background: #fff; }
+.form-group .error { color: #c62828; font-size: .8rem; margin-top: .2rem; }
+
+.form-actions { margin-top: 1.5rem; display: flex; gap: .75rem; align-items: center; }
+
+/* ── Home quick-links ── */
+.quick-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.quick-link-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 2px 10px rgba(0,0,0,.07);
+    border: 2px solid transparent;
+    transition: border-color .2s, transform .2s;
+}
+.quick-link-card:hover { border-color: #3949ab; transform: translateY(-3px); }
+.quick-link-card .ql-icon { font-size: 2.2rem; margin-bottom: .6rem; }
+.quick-link-card .ql-label { font-weight: 600; font-size: 1rem; color: #1a237e; }
+.quick-link-card .ql-desc  { font-size: .8rem; color: #757575; margin-top: .25rem; }
+
+/* ── Report table accent ── */
+.report-table thead tr { background: linear-gradient(90deg, #1a237e, #3949ab); }
+
+/* ── Footer ── */
+footer {
+    background: #1a237e;
+    color: #90caf9;
+    text-align: center;
+    padding: 1rem;
+    font-size: .8rem;
+    margin-top: auto;
+}
+
+/* ── Error page ── */
+.error-box {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.1);
+    padding: 3rem 2.5rem;
+    text-align: center;
+    max-width: 520px;
+    margin: 3rem auto;
+}
+.error-box .err-icon { font-size: 3.5rem; margin-bottom: 1rem; }
+.error-box h2 { color: #c62828; margin-bottom: .75rem; }
+.error-box p  { color: #555; margin-bottom: 1.5rem; }
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+    .header-inner { flex-direction: column; height: auto; padding: .75rem 0; gap: .5rem; }
+    nav { flex-wrap: wrap; justify-content: center; }
+    .page-title { font-size: 1.3rem; }
+}
